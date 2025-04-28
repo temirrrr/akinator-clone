@@ -1,81 +1,70 @@
-# Nalrimet's Akinator
+# Getting Started with Create React App
 
-## Описание проекта
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Это веб-приложение-клон игры "Akinator", которое умеет угадывать задуманного пользователем персонажа на основе последовательных вопросов.
-Реализовано два режима:
+## Available Scripts
 
-- Игра через базу данных заранее известных персонажей;
-- Игра через нейросеть OpenAI GPT-4o, где угадывание происходит на основе LLM.
+In the project directory, you can run:
 
-## Установка и запуск
+### `npm start`
 
-1. Клонировать репозиторий:
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-```bash
-https://github.com/your-username/akinator-clone.git
-```
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-2. Установить зависимости:
+### `npm test`
 
-```bash
-npm install
-```
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-3. Запустить приложение локально:
+### `npm run build`
 
-```bash
-npm start
-```
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-> Приложение будет доступно по адресу: `http://localhost:3000`
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-4. (Если нужно сохранять новых персонажей) Также необходимо запустить небольшой Node.js-сервер (инструкция есть в `/server` папке).
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+### `npm run eject`
 
-## Процесс проектирования и разработки
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-- **Frontend:**
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-  - React.js для построения интерфейса.
-  - React Router для навигации между страницами.
-  - Bootstrap для оформления кнопок, карточек и навбара.
-  - LocalStorage для хранения статистики и прогресса.
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-- **Backend:**
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-  - Node.js для обработки добавления новых персонажей.
+## Learn More
 
-- **OpenAI:**
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-  - Использование GPT-4o для уточняющих вопросов и генерации угадывания.
+To learn React, check out the [React documentation](https://reactjs.org/).
 
+### Code Splitting
 
-## Уникальные подходы
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-- 2 режима игры: база данных + LLM.
-- Самообучение.
-- Смена тем и фоновая музыка.
-- Система достижений.
-- Адаптивный UI.
+### Analyzing the Bundle Size
 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-## Компромиссы
+### Making a Progressive Web App
 
-- LocalStorage вместо полноценной БД.
-- Нет проверки на дубликаты.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
+### Advanced Configuration
 
-## Известные ограничения
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-- Полная зависимость от корректности вводимых данных.
+### Deployment
 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-## Почему этот стек
+### `npm run build` fails to minify
 
-- **React**: Быстрая разработка SPA.
-- **Node.js**: Простота веб-серверов.
-- **Bootstrap**: Быстрая верстка.
-- **LocalStorage**: Хранение прогресса.
-- **OpenAI GPT-4o**: Сильный интеллект для угадывания.
-
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
