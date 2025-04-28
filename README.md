@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# Nalrimet's Akinator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Описание проекта
 
-## Available Scripts
+Это веб-приложение-клон игры "Akinator", которое умеет угадывать задуманного пользователем персонажа на основе последовательных вопросов.
+Реализовано два режима:
 
-In the project directory, you can run:
+- Игра через базу данных заранее известных персонажей;
+- Игра через нейросеть OpenAI GPT-4o, где угадывание происходит на основе LLM.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Установка и запуск
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Клонировать репозиторий:
 
-### `npm test`
+```bash
+https://github.com/your-username/akinator-clone.git
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Установить зависимости:
 
-### `npm run build`
+```bash
+npm install
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Запустить приложение локально:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+> Приложение будет доступно по адресу: `http://localhost:3000`
 
-### `npm run eject`
+4. (Опционально) Если вы хотите поддерживать сохранение новых персонажей на сервере, нужно дополнительно запустить Node.js сервер (подключаемый отдельно).
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+5. В файл GameLLM.js вставить свой ключ OpenAI.
+   
+## Процесс проектирования и разработки
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Frontend:**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+  - React.js для построения интерфейса.
+  - React Router для навигации между страницами.
+  - Bootstrap для базового оформления кнопок, карточек и навбара.
+  - LocalStorage для хранения статистики достижений, прогресса пользователя и кастомных персонажей.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **Backend:**
 
-## Learn More
+  - Минималистичный Node.js сервер для обработки новых персонажей при обучении (если подключать сохранение в базу).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **OpenAI:**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  - Использование API GPT-4o для генерации уточняющих вопросов и угадывания персонажей в режиме ИИ.
 
-### Code Splitting
+## Уникальные подходы и методологии
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Поддержка двух режимов игры: фиксированная база персонажей и свободное угадывание через LLM.
+- Возможность обучать систему новыми персонажами напрямую из интерфейса.
+- Тематические стили оформления ("светлая", "тёмная", "космическая", "ретро", "colorful" темы).
+- Возможность включить фоновую музыку.
+- Система достижений с прогресс-барами.
+- Адаптивный дизайн для десктопа и мобильных устройств.
 
-### Analyzing the Bundle Size
+## Компромиссы разработки
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Для упрощения интеграции и ускорения разработки в качестве базы данных используется LocalStorage.
+- Без серверной валидации при добавлении новых персонажей: требуется доверие к данным от клиента.
 
-### Making a Progressive Web App
+## Известные ошибки или ограничения
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Нет проверки на дубликаты персонажей при обучении.
 
-### Advanced Configuration
+## Почему выбран этот стек
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- **React**: эффективный подход для построения динамичного пользовательского интерфейса + больше всего опыта именно с этим фреймфорком.
+- **Node.js**: лёгкость развертывания простого API.
+- **Bootstrap**: быстрое оформление и адаптивная вёрстка.
+- **LocalStorage**: позволяет сохранять персональный прогресс пользователя без необходимости в полноценной БД.
+- **OpenAI GPT-4o**: мощная, доступная нейросеть.
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
